@@ -328,3 +328,7 @@ class GPT(nn.Module):
             idx = torch.cat((idx, idx_next), dim=1)
 
         return idx
+    
+    @property
+    def device(self):
+        return next(self.parameters()).device
